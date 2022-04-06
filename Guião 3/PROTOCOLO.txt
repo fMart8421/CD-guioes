@@ -1,0 +1,37 @@
+Na creação de cada queue, vai ser enviada uma mensagem do tipo SubscribeMessage, esta tem como formato:
+    {
+        "command": "subscribe",
+        "topic": nome_do_topico,
+    }
+
+############################################################################################################################################################
+
+Ao cancelar uma subscrição vai ser enviada uma mensagem do tipo "UnsubscribeMessage", com o formato:
+   {
+        "command": "unsubscribe",
+        "topic": nome_do_topico,
+    }
+
+############################################################################################################################################################
+
+Ao publicar para um tópico (PRODUCER), será enviada uma mensagem do tipo PublishMessage, com o formato:
+    {
+        "command": "publish",
+        "topic": nome_do_topico,
+        "content":conteudo
+    }
+
+Ao inicializar uma queue com o client_type do tipo PRODUCER, vai ser enviada uma mensagem do tipo PublishMessage com o campo content igual a None
+
+############################################################################################################################################################
+
+Ao pedir para listar os tópicos irá ser enviada uma mensagem do tipo ListTopics, à qual será respondida através de uma mensagem do tipo ListResponseMessage,
+sendo os formatos os seguintes, respetivamente:
+    {
+        "command": "list",
+    }
+
+    {
+        "command": "topiclist",
+        "list": List[str],
+    }
