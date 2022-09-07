@@ -1,5 +1,3 @@
 # CD-guioes
 
-## Nota
-
-Não sei quais testes cada guião passa nem a sua classificação.
+Labs created in Python for the Distributed Systems' course. The project was a password cracker.
